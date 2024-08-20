@@ -1,0 +1,326 @@
+@charset "UTF-8";
+body {
+  padding: 0;
+  margin: 0;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+}
+
+* {
+  font-family: "微軟正黑體";
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.container {
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.bg {
+  width: 100%;
+  pointer-events: none;
+}
+
+.gameBox {
+  position: absolute;
+  width: 98%;
+  padding-bottom: calc(98% * 1.3);
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 6.7%;
+}
+
+.gameBox_inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.gameBox_bg {
+  width: 101.5%;
+  -webkit-transform: translateX(-0.5%);
+          transform: translateX(-0.5%);
+  pointer-events: none;
+}
+
+.btn-start {
+  width: 40%;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 33%;
+  cursor: pointer;
+}
+
+.start-count {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 44%;
+  font-size: 160px;
+  font-weight: 900;
+  display: none;
+}
+
+.woman {
+  position: absolute;
+  width: 25%;
+  left: 37.5%;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.drop-area {
+  position: absolute;
+  width: 90%;
+  padding-bottom: 105%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 5%;
+  left: 50%;
+}
+
+.btn-left-mask {
+  position: absolute;
+  width: 17.5%;
+  padding-bottom: 17.5%;
+  border-radius: 50%;
+  left: 5.5%;
+  bottom: -0.4%;
+}
+
+.btn-right-mask {
+  position: absolute;
+  width: 17.5%;
+  padding-bottom: 17.5%;
+  border-radius: 50%;
+  right: 5.5%;
+  bottom: -0.4%;
+}
+
+.fall {
+  position: absolute;
+  width: 10%;
+  top: 7%;
+  -webkit-transition: 2s linear;
+  transition: 2s linear;
+  pointer-events: none;
+}
+
+.fall.opacity-1 {
+  opacity: 1;
+}
+
+.fall img {
+  width: 100%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.fall-1 {
+  left: 10%;
+}
+
+.fall-2 {
+  left: 32%;
+}
+
+.fall-3 {
+  left: 57%;
+}
+
+.fall-4 {
+  left: 80%;
+}
+
+.fall.start {
+  opacity: 1;
+}
+
+.fall.move {
+  top: 70%;
+}
+
+.fall.keepmove {
+  top: 76%;
+  -webkit-transition: 0.18s linear;
+  transition: 0.18s linear;
+}
+
+.fall.catch {
+  left: 37.5%;
+  top: 72%;
+  -webkit-transition: none;
+  transition: none;
+  -webkit-animation: none;
+          animation: none;
+}
+
+.fall.catch img {
+  opacity: 0;
+}
+
+.fall.catch::after {
+  -webkit-animation: show 2s ease-in-out;
+          animation: show 2s ease-in-out;
+}
+
+.fall::after {
+  position: absolute;
+  content: "+1";
+  font-size: 32px;
+  color: #da2e2e;
+  font-weight: 700;
+  top: -25px;
+  right: -25px;
+  opacity: 0;
+}
+
+@-webkit-keyframes show {
+  0% {
+    opacity: 1;
+  }
+  33.3333% {
+    opacity: 1;
+  }
+  66.6666% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 1;
+  }
+  33.3333% {
+    opacity: 1;
+  }
+  66.6666% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes topShow {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes topShow {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.limitTime {
+  position: absolute;
+  color: #402110;
+  bottom: 0.2%;
+  left: 30%;
+  font-size: 40px;
+  font-weight: 700;
+  z-index: 5;
+  text-align: right;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+@media screen and (max-width: 575px) {
+  .limitTime {
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .limitTime {
+    font-size: 26px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .limitTime {
+    font-size: 22px;
+  }
+}
+
+.getNum {
+  position: absolute;
+  color: #402110;
+  bottom: 0.3%;
+  right: 29%;
+  font-size: 40px;
+  font-weight: 700;
+  z-index: 5;
+  text-align: center;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+@media screen and (max-width: 575px) {
+  .getNum {
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .getNum {
+    font-size: 26px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .getNum {
+    font-size: 22px;
+  }
+}
+
+.sucess, .fail {
+  position: absolute;
+  width: 92%;
+  top: 21.5%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: none;
+}
+/*# sourceMappingURL=style.css.map */

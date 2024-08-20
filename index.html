@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css?v=20230830">
+</head>
+<body>
+    <div class="container">
+        <img class="bg" src="./img/bg.png" alt="">
+
+        <div class="gameBox">
+            <div class="gameBox_inner" id="main-play">
+                <div class="drop-area">
+                    <img class="woman" src="./img/woman.png" alt="">
+                </div>
+
+                <div class="btn-left-mask" id="btn-left"></div>
+                <div class="btn-right-mask" id="btn-right"></div>
+
+                <div class="limitTime"><span id="limitTime">10</span> 秒</div>
+                <div class="getNum">0</div>
+            </div>
+            <div class="gameBox_inner" id="main-init">
+                <img class="gameBox_bg" src="./img/init.png" alt="">
+                <img class="btn-start" src="./img/start-btn.gif" alt="">
+                <div class="start-count" id="count">3</div>
+            </div>
+
+            <img class="sucess" src="./img/sucess.png" alt="">
+            <img class="fail" src="./img/fail.png" alt="">
+        </div>
+
+    </div>
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/index.js?v=20230830"></script>
+</body>
+</html>
