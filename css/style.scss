@@ -132,18 +132,13 @@ body {
     &-4 {
         left: 80%;
     }
-    &.trash {
-        // width: 7.5%;
-    }
     &.start {
         opacity: 1;
     }
     &.move {
         top: 70%;
-        // animation: topShow 2s ease-in-out;
     }
     &.keepmove {
-        // top: 81.5%;
         top: 76%;
         transition: 0.18s linear;
     }
@@ -215,11 +210,9 @@ body {
     text-align: right;
     transform: translateY(-50%);
     @media screen and (max-width: 575px) {
-        // top: 8.8%;
-        // left: 20.5%;
         font-size: 32px;
     }
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: 450px) {
         font-size: 26px;
     }
     @media screen and (max-width: 370px) {
@@ -241,7 +234,7 @@ body {
         // top: 8.8%;
         font-size: 32px;
     }
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: 450px) {
         font-size: 26px;
     }
     @media screen and (max-width: 370px) {

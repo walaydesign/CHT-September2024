@@ -19,7 +19,6 @@ function scrollGame() {
     var gameBoxTop = $(".gameBox").offset().top;
     var gameBoxHeightHalf = $(".gameBox").width() * 1.3 / 2;
     var windowHeightHalf = $(window).height() / 2;
-    console.log("gameBoxTop=" + gameBoxTop + ",gameBoxHeightHalf=" + gameBoxHeightHalf + ",windowHeightHalf=" + windowHeightHalf);
     var scrollTop = gameBoxTop + gameBoxHeightHalf - windowHeightHalf;
     $("html,body").animate({ scrollTop: scrollTop }, parseInt(300));
 }
@@ -55,11 +54,20 @@ function startCount() {
     countSecond = count;
     var countActive = document.getElementById("count");
     var mainInit = document.getElementById("main-init");
-    // var mainPlay = document.getElementById("main-play");
     countActive.innerHTML = countSecond;
     countActive.style.display = "block";
     mainInit.style.display = "block";
-    // mainPlay.style.display = "none";
+
+    // 初始化
+    $(".woman").css("left","37.5%").removeClass("back");
+
+    limitSecond = 10;
+    var limitTimeActive = document.getElementById("limitTime");
+    limitTimeActive.innerHTML = limitSecond;
+
+    getNum = 0;
+    var getNumActive = document.getElementById("getNum");
+    getNumActive.innerHTML = getNum;
 
     countNum = window.setInterval(function () {
         countSecond -= 1;
@@ -68,7 +76,6 @@ function startCount() {
             clearInterval(countNum);
             countActive.style.display = "none";
             mainInit.style.display = "none";
-            // mainPlay.style.display = "block";
 
             limitTime();
 
@@ -154,7 +161,6 @@ function blanketLeft(){
         old_left = old_left - offset;
         $(".woman").css("left",old_left + "%");
 
-        // console.log("old_left=" + old_left);
 
         btnLeft.addEventListener('mouseup',function(){
             clearInterval(blanketRunLeft);
@@ -172,15 +178,12 @@ function blanketRight(){
     clearInterval(blanketRunLeft);
     blanketRunRight = window.setInterval(function () {
         var old_left = parseInt($(".woman").css("left")) / boxWidth * 100;
-        // var new_left;
 
         if (old_left >= runTo) {
             offset = 0;
         }else {
             offset = 1;
         }
-
-        console.log("old_left=" + old_left);
         
         old_left = old_left + offset;
         $(".woman").css("left", old_left + "%");
@@ -198,20 +201,16 @@ function blanketRight(){
 
 btnLeft.addEventListener('mousedown',function(){
     blanketLeft();
-    console.log("向左走");
 });
 btnLeft.addEventListener('touchstart',function(){
     blanketLeft();
-    console.log("向左走");
 });
 
 btnRight.addEventListener('mousedown',function(){
     blanketRight();
-    console.log("向右走");
 });
 btnRight.addEventListener('touchstart',function(){
     blanketRight();
-    console.log("向右走");
 });
 
 
@@ -292,6 +291,7 @@ function fail() {
     clearInterval(limitTimeNum);
     clearInterval(runGame);
     $(".gameBox").addClass("failgame");
+    $(".woman").css("left","37.5%").removeClass("back");
     $(".fall").each(function(){
         $(this).remove();
     })

@@ -271,7 +271,7 @@ body {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .limitTime {
     font-size: 26px;
   }
@@ -302,7 +302,7 @@ body {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .getNum {
     font-size: 26px;
   }
