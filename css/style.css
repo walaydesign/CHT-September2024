@@ -75,9 +75,20 @@ body {
 .woman {
   position: absolute;
   width: 25%;
-  left: 37.5%;
   bottom: 0;
   pointer-events: none;
+}
+
+.woman.move-left {
+  left: 13%;
+}
+
+.woman.move-right {
+  left: 64%;
+}
+
+.woman.move-center {
+  left: 37.5%;
 }
 
 .drop-area {
@@ -110,8 +121,8 @@ body {
 
 .fall {
   position: absolute;
-  width: 10%;
-  top: 7%;
+  width: 13%;
+  top: 70%;
   -webkit-transition: 2s linear;
   transition: 2s linear;
   pointer-events: none;
@@ -271,15 +282,35 @@ body {
   }
 }
 
+@media screen and (max-width: 500px) {
+  .limitTime {
+    font-size: 28px;
+  }
+}
+
 @media screen and (max-width: 450px) {
   .limitTime {
     font-size: 26px;
+    bottom: 0.4%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .limitTime {
+    bottom: -0.4%;
   }
 }
 
 @media screen and (max-width: 370px) {
   .limitTime {
     font-size: 22px;
+    bottom: 0.2%;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .limitTime {
+    bottom: -0.2%;
   }
 }
 
@@ -302,15 +333,35 @@ body {
   }
 }
 
+@media screen and (max-width: 500px) {
+  .getNum {
+    font-size: 28px;
+  }
+}
+
 @media screen and (max-width: 450px) {
   .getNum {
     font-size: 26px;
+    bottom: 0.4%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .getNum {
+    bottom: -0.4%;
   }
 }
 
 @media screen and (max-width: 370px) {
   .getNum {
     font-size: 22px;
+    bottom: 0.2%;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .getNum {
+    bottom: -0.2%;
   }
 }
 
