@@ -55,7 +55,7 @@ function startCount() {
     mainInit.style.display = "block";
 
     // 初始化
-    $(".woman").css("left","37.5%").removeClass("back");
+    $(".woman").removeClass("back").removeClass("move-left").removeClass("move-right").addClass("move-center");
 
     limitSecond = 10;
     var limitTimeActive = document.getElementById("limitTime");
@@ -115,7 +115,7 @@ function limitTime() {
     limitTimeActive.innerHTML = limitTimeSecond;
     getNum = 0;
     $(".getNum").text("0");
-    $(".woman").css("left","37.5%").removeClass("back");
+    $(".woman").removeClass("back").removeClass("move-left").removeClass("move-right").addClass("move-center");
     $(".sucess").hide();
 
     limitTimeNum = window.setInterval(function () {
@@ -132,6 +132,7 @@ function limitTime() {
 }
 
 $(".btn-left-mask").click(function() {
+    console.log("向左走");
     if($(".woman").hasClass("move-center")) {
         $(".woman").removeClass("move-center").removeClass("move-right").addClass("move-left");
     }else if($(".woman").hasClass("move-right")) {
@@ -140,6 +141,7 @@ $(".btn-left-mask").click(function() {
 });
 
 $(".btn-right-mask").click(function() {
+    console.log("向右走");
     if($(".woman").hasClass("move-center")) {
         $(".woman").removeClass("move-center").removeClass("move-left").addClass("move-right");
     }else if($(".woman").hasClass("move-left")) {
@@ -307,7 +309,7 @@ function fail() {
     clearInterval(limitTimeNum);
     clearInterval(runGame);
     $(".gameBox").addClass("failgame");
-    $(".woman").css("left","37.5%").removeClass("back");
+    $(".woman").removeClass("back").removeClass("move-left").removeClass("move-right").addClass("move-center");
     $(".fall").each(function(){
         $(this).remove();
     })
