@@ -77,7 +77,7 @@ function startCount() {
 
             var record = new Array();
             runGame = setInterval(function(){
-                for (i = 0; i < 3; i++) {
+                for (i = 0; i < 2; i++) {
                     var position = getPosition();
                     record[i] = position;
 
@@ -132,7 +132,6 @@ function limitTime() {
 }
 
 $(".btn-left-mask").click(function() {
-    console.log("向左走");
     if($(".woman").hasClass("move-center")) {
         $(".woman").removeClass("move-center").removeClass("move-right").addClass("move-left");
     }else if($(".woman").hasClass("move-right")) {
@@ -141,7 +140,6 @@ $(".btn-left-mask").click(function() {
 });
 
 $(".btn-right-mask").click(function() {
-    console.log("向右走");
     if($(".woman").hasClass("move-center")) {
         $(".woman").removeClass("move-center").removeClass("move-left").addClass("move-right");
     }else if($(".woman").hasClass("move-left")) {
@@ -149,87 +147,6 @@ $(".btn-right-mask").click(function() {
     }
 })
 
-
-// 左右移動
-// var btnLeft = document.getElementById("btn-left");
-// var btnRight = document.getElementById("btn-right");
-
-// var runFrom = 3;
-// var runTo = 72;
-// var offset;
-// var boxWidth = $(".drop-area").width();
-// var blanketRunLeft;
-// var blanketRunRight;
-
-// function blanketLeft(){
-//     clearInterval(blanketRunRight);
-//     blanketRunLeft = window.setInterval(function () {
-
-        // var old_left = parseInt($(".woman").css("left")) / boxWidth * 100;
-        
-        // if (old_left <= runFrom) {
-        //     offset = 0;
-        // } else {
-        //     offset = 1;
-        // }
-
-        // old_left = old_left - offset;
-        // $(".woman").css("left",old_left + "%");
-
-
-//         btnLeft.addEventListener('mouseup',function(){
-//             clearInterval(blanketRunLeft);
-//         });
-//         btnLeft.addEventListener('touchend',function(){
-//             clearInterval(blanketRunLeft);
-//         });
-//         btnLeft.addEventListener('click',function(){
-//             clearInterval(blanketRunLeft);
-//         });
-//     }, 20)
-// }
-
-// function blanketRight(){
-//     clearInterval(blanketRunLeft);
-//     blanketRunRight = window.setInterval(function () {
-        // var old_left = parseInt($(".woman").css("left")) / boxWidth * 100;
-
-        // if (old_left >= runTo) {
-        //     offset = 0;
-        // }else {
-        //     offset = 1;
-        // }
-        
-        // old_left = old_left + offset;
-        // $(".woman").css("left", old_left + "%");
-
-
-
-//         btnRight.addEventListener('mouseup',function(){
-//             clearInterval(blanketRunRight);
-//         });
-//         btnRight.addEventListener('touchend',function(){
-//             clearInterval(blanketRunRight);
-//         });
-//         btnRight.addEventListener('click',function(){
-//             clearInterval(blanketRunRight);
-//         });
-//     }, 20)
-// }
-
-// btnLeft.addEventListener('mousedown',function(){
-//     blanketLeft();
-// });
-// btnLeft.addEventListener('touchstart',function(){
-//     blanketLeft();
-// });
-
-// btnRight.addEventListener('mousedown',function(){
-//     blanketRight();
-// });
-// btnRight.addEventListener('touchstart',function(){
-//     blanketRight();
-// });
 
 
 // 東西掉落
@@ -299,8 +216,8 @@ function dropBox(position) {
                     thisBox.hide();
                 },200);
             }
-        }, 2000);
-    }, 1000);
+        }, 1800);
+    }, 500);
 }
 
 function fail() {
